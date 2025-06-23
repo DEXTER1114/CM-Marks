@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%236dc6fe'/></svg>" type="image/svg+xml">
+  <title>CM Marks</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <nav>CM Marks</nav>
+
+  <div id="notification" class="toast"></div>
+
+  <div class="input-row">
+    <div class="paper-box">
+      <select id="paperType">
+        <option value="Pure">Pure</option>
+        <option value="Applied">Applied</option>
+      </select>
+      <input type="number" id="paperNumber" placeholder="Paper No." min="1" />
+    </div>
+    <input type="number" id="marks" placeholder="Marks" min="0" max="100" />
+    <button onclick="addEntry()">Add / Update</button>
+  </div>
+
+  <div id="mainContent">
+    <div id="rightSide" class="glass">
+      <div id="datasetToggles">
+        <label><input type="checkbox" id="togglePure" checked /> Pure</label>
+        <label><input type="checkbox" id="toggleApplied" checked /> Applied</label>
+        <label><input type="checkbox" id="toggleTotal" checked /> Total</label>
+      </div>
+      <canvas id="marksChart"></canvas>
+    </div>
+
+    <div id="marksTableContainer" class="glass">
+      <table id="marksTable">
+        <thead>
+          <tr>
+            <th>Paper</th>
+            <th>Pure</th>
+            <th>Applied</th>
+            <th>Total</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="Script.js"></script>
+  
+</body>
+</html>
